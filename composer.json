@@ -1,0 +1,22 @@
+{
+  "name": "robcio/smk-starter-kit",
+  "description": "Neutral SMK Core Starter Kit for Statamic",
+  "require": {
+    "php": "~8.5.0",
+    "laravel/framework": "13.39.0",
+    "statamic/cms": "6.39.0",
+    "symfony/http-foundation": "8.1.11",
+    "symfony/http-kernel": "8.1.11",
+    "symfony/routing": "8.1.11",
+    "symfony/serializer": "8.1.11",
+    "symfony/yaml": "8.1.11"
+  },
+  "type": "library",
+  "license": "proprietary",
+  "extra": {
+    "statamic": {
+      "name": "SMK Starter Kit",
+      "description": "Neutral reusable Core with Hero, Rich Text and CTA"
+    }
+  }
+}

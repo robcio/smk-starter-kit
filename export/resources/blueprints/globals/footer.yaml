@@ -1,0 +1,25 @@
+title: Stopka
+tabs:
+  main:
+    display: Ustawienia
+    sections:
+      -
+        fields:
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Opis
+              validate:
+                - nullable
+                - string
+                - 'max:1000'
+          -
+            handle: copyright_notice
+            field:
+              type: text
+              display: 'Informacja o prawach'
+              validate:
+                - nullable
+                - string
+                - 'max:255'

@@ -1,0 +1,29 @@
+/* Keep after Brand imports: preferences take precedence over theme motion defaults. */
+@layer base {
+    @media (prefers-reduced-motion: reduce) {
+        :root {
+            --smk-motion-fast: 0ms;
+            --smk-motion-normal: 0ms;
+            --smk-motion-slow: 0ms;
+        }
+    }
+}
+@layer components {
+    .smk-skip-link {
+        position: fixed;
+        inset-block-start: var(--smk-space-gutter);
+        inset-inline-start: var(--smk-space-gutter);
+        z-index: 100;
+        max-inline-size: calc(100% - 2 * var(--smk-space-gutter));
+        padding: 0.5em 1em;
+        background-color: var(--smk-color-surface);
+        color: var(--smk-color-link);
+        overflow-wrap: anywhere;
+        transform: translateY(calc(-100% - var(--smk-space-gutter) - 8px));
+    }
+    .smk-skip-link:focus {
+        transform: none;
+        outline: 3px solid var(--smk-color-focus);
+        outline-offset: 3px;
+    }
+}

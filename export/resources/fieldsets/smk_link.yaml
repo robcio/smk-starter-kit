@@ -1,0 +1,62 @@
+title: 'SMK — Link'
+fields:
+  -
+    handle: label
+    field:
+      type: text
+      display: Etykieta
+      validate:
+        - required
+        - string
+        - 'max:120'
+  -
+    handle: destination_type
+    field:
+      type: select
+      display: 'Rodzaj celu'
+      options:
+        entry: Wpis
+        url: 'Adres URL'
+      default: entry
+      clearable: false
+      validate:
+        - required
+        - 'in:entry,url'
+  -
+    handle: entry
+    field:
+      type: entries
+      display: Wpis
+      max_items: 1
+      create: false
+      if:
+        destination_type: 'equals entry'
+      validate:
+        - nullable
+        - 'required_if:{this}.destination_type,entry'
+        - 'prohibited_unless:{this}.destination_type,entry'
+        - 'new App\Rules\Smk\PublishedEntry'
+  -
+    handle: url
+    field:
+      type: text
+      display: 'Adres URL'
+      input_type: text
+      if:
+        destination_type: 'equals url'
+      instructions: 'HTTP(S), mailto, tel, ścieżka od / lub kotwica #.'
+      validate:
+        - nullable
+        - 'required_if:{this}.destination_type,url'
+        - 'prohibited_unless:{this}.destination_type,url'
+        - string
+        - 'max:2048'
+        - 'new App\Rules\Smk\LinkUrl'
+  -
+    handle: new_window
+    field:
+      type: toggle
+      display: 'Otwórz w nowej karcie'
+      default: false
+      validate:
+        - boolean

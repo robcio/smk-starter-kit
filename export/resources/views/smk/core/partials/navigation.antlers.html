@@ -1,0 +1,23 @@
+{{ if items }}
+<nav aria-label="{{ label | sanitize }}" class="smk-navigation">
+    <ul class="smk-nav-list">
+        {{ items }}
+        <li{{ if active }} class="smk-nav-active"{{ /if }}{{ if children }} data-smk-disclosure="submenu"{{ /if }}>
+            <div class="smk-nav-row">
+                {{ if url }}{{ partial:smk/core/partials/link :item="link" }}{{ else }}<span>{{ label | sanitize }}</span>{{ /if }}
+                {{ if children }}
+                <button type="button" data-smk-toggle aria-expanded="true" aria-controls="{{ panel_id }}" hidden>Podmenu: {{ label | sanitize }}</button>
+                {{ /if }}
+            </div>
+            {{ if children }}
+            <ul id="{{ panel_id }}" class="smk-subnav" data-smk-panel>
+                {{ children }}
+                <li{{ if active }} class="smk-nav-active"{{ /if }}>{{ partial:smk/core/partials/link :item="link" }}</li>
+                {{ /children }}
+            </ul>
+            {{ /if }}
+        </li>
+        {{ /items }}
+    </ul>
+</nav>
+{{ /if }}

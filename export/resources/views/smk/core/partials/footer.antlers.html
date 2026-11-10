@@ -1,0 +1,10 @@
+{{ if shell:settings:footer:description || shell:settings:footer:copyright_notice || shell:navigation:footer || shell:navigation:legal }}
+<footer class="smk-footer" data-smk-theme="surface">
+    <div class="smk-container smk-stack" data-smk-width="content">
+        {{ if shell:settings:footer:description }}<p>{{ shell:settings:footer:description | sanitize }}</p>{{ /if }}
+        {{ partial:smk/core/partials/navigation :items="shell:navigation:footer" label="Nawigacja w stopce" }}
+        {{ partial:smk/core/partials/navigation :items="shell:navigation:legal" label="Informacje prawne" }}
+        {{ if shell:settings:footer:copyright_notice }}<p>{{ shell:settings:footer:copyright_notice | sanitize }}</p>{{ /if }}
+    </div>
+</footer>
+{{ /if }}

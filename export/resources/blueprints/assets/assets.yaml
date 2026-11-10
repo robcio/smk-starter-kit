@@ -1,0 +1,36 @@
+title: Zasób
+fields:
+  -
+    handle: alt
+    field:
+      display: 'Tekst alternatywny'
+      type: text
+      instructions: 'Opisz to, co przedstawia obraz. Dla obrazu wyłącznie dekoracyjnego zaznacz opcję poniżej.'
+      validate:
+        - nullable
+        - string
+        - 'max:300'
+  -
+    handle: decorative
+    field:
+      type: toggle
+      display: Dekoracyjny
+      default: false
+  -
+    handle: caption
+    field:
+      type: text
+      display: 'Podpis pod obrazem'
+      validate:
+        - nullable
+        - string
+        - 'max:300'
+  -
+    handle: credit
+    field:
+      type: text
+      display: 'Autor lub źródło obrazu'
+      validate:
+        - nullable
+        - string
+        - 'max:300'

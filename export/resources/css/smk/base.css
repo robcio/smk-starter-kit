@@ -1,0 +1,25 @@
+@layer base {
+    body {
+        background-color: var(--smk-color-surface);
+        color: var(--smk-color-text);
+        font-family: var(--smk-font-body);
+        font-size: var(--smk-text-body);
+        line-height: var(--smk-leading-body);
+        overflow-wrap: anywhere;
+    }
+    :where([data-smk-theme]) {
+        background-color: var(--smk-color-surface);
+        color: var(--smk-color-text);
+    }
+    a {
+        color: var(--smk-color-link);
+        text-decoration-line: underline;
+        text-underline-offset: 0.2em;
+        text-decoration-thickness: 0.08em;
+    }
+    a:hover { color: var(--smk-color-link-hover); }
+    :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+        outline: 3px solid var(--smk-color-focus);
+        outline-offset: 3px;
+    }
+}

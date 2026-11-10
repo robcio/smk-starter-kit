@@ -1,0 +1,75 @@
+@layer base {
+    :root {
+        --smk-font-body: var(--smk-primitive-sans);
+        --smk-font-display: var(--smk-primitive-sans);
+        --smk-text-small: 0.875rem;
+        --smk-text-body: 1rem;
+        --smk-text-lead: 1.125rem;
+        --smk-text-heading-sm: 1.5rem;
+        --smk-text-heading-md: 2rem;
+        --smk-text-heading-lg: 2.75rem;
+        --smk-text-display: clamp(2.25rem, 1.5rem + 3vw, 4.5rem);
+        --smk-leading-body: 1.6;
+        --smk-leading-heading: 1.2;
+        --smk-space-stack: var(--smk-primitive-space-6);
+        --smk-space-gutter: var(--smk-primitive-space-4);
+        --smk-space-section-compact: clamp(1.5rem, 1rem + 2vw, 3rem);
+        --smk-space-section-normal: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+        --smk-space-section-spacious: clamp(4rem, 2rem + 6vw, 8rem);
+        --smk-container-reading: 65ch;
+        --smk-container-content: 72rem;
+        --smk-container-wide: 90rem;
+        --smk-container-full: 100%;
+        --smk-radius-none: 0;
+        --smk-radius-small: 0.25rem;
+        --smk-radius-medium: 0.75rem;
+        --smk-radius-large: 1.5rem;
+        --smk-radius-pill: 9999px;
+        --smk-radius-button: var(--smk-radius-small);
+        --smk-shadow-none: none;
+        --smk-shadow-subtle: 0 1px 3px rgb(0 0 0 / 0.12);
+        --smk-shadow-elevated: 0 8px 24px rgb(0 0 0 / 0.18);
+        --smk-motion-fast: 120ms;
+        --smk-motion-normal: 200ms;
+        --smk-motion-slow: 320ms;
+        --smk-motion-ease: cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    /* Declare every role at each boundary so nested themes never inherit a mismatched pair. */
+    :where(:root, [data-smk-theme="surface"]) {
+        --smk-color-surface: var(--smk-primitive-neutral-0);
+        --smk-color-text: var(--smk-primitive-neutral-900);
+        --smk-color-muted: var(--smk-primitive-neutral-600);
+        --smk-color-border: var(--smk-primitive-neutral-500);
+        --smk-color-accent: var(--smk-primitive-accent);
+        --smk-color-on-accent: var(--smk-primitive-neutral-0);
+        --smk-color-focus: var(--smk-primitive-accent);
+        --smk-color-link: var(--smk-primitive-accent);
+        --smk-color-link-hover: var(--smk-primitive-neutral-900);
+    }
+    :where([data-smk-theme="contrast"]) {
+        --smk-color-surface: var(--smk-primitive-neutral-900);
+        --smk-color-text: var(--smk-primitive-neutral-0);
+        --smk-color-muted: var(--smk-primitive-neutral-300);
+        --smk-color-border: var(--smk-primitive-neutral-400);
+        --smk-color-accent: var(--smk-primitive-accent-light);
+        --smk-color-on-accent: var(--smk-primitive-neutral-900);
+        --smk-color-focus: var(--smk-primitive-accent-light);
+        --smk-color-link: var(--smk-primitive-accent-light);
+        --smk-color-link-hover: var(--smk-primitive-neutral-0);
+    }
+    :where([data-smk-theme="accent"]) {
+        --smk-color-surface: var(--smk-primitive-accent);
+        --smk-color-text: var(--smk-primitive-neutral-0);
+        --smk-color-muted: var(--smk-primitive-neutral-200);
+        --smk-color-border: var(--smk-primitive-neutral-300);
+        --smk-color-accent: var(--smk-primitive-neutral-0);
+        --smk-color-on-accent: var(--smk-primitive-accent);
+        --smk-color-focus: var(--smk-primitive-neutral-0);
+        --smk-color-link: var(--smk-primitive-neutral-0);
+        --smk-color-link-hover: var(--smk-primitive-neutral-200);
+    }
+    @media (min-width: 48rem) {
+        :root { --smk-space-gutter: var(--smk-primitive-space-8); }
+    }
+}

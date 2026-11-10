@@ -1,0 +1,5 @@
+{{ if smk_page }}
+    {{ partial:smk/core/partials/builder :page="smk_page" }}
+{{ else }}
+    <div class="smk-section" data-smk-spacing="normal"><div class="smk-container smk-stack" data-smk-width="reading"><h1 class="smk-display">{{ title | sanitize }}</h1><div class="smk-rich-text">{{ content }}</div></div></div>
+{{ /if }}

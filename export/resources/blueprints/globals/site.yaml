@@ -1,0 +1,66 @@
+title: Witryna
+tabs:
+  main:
+    display: Ustawienia
+    sections:
+      -
+        fields:
+          -
+            handle: site_name
+            field:
+              type: text
+              display: 'Nazwa witryny'
+              validate:
+                - required
+                - string
+                - 'max:120'
+          -
+            handle: tagline
+            field:
+              type: text
+              display: Hasło
+              validate:
+                - nullable
+                - string
+                - 'max:200'
+          -
+            handle: email
+            field:
+              type: text
+              display: E-mail
+              validate:
+                - nullable
+                - string
+                - 'max:254'
+                - 'email:rfc'
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+              validate:
+                - nullable
+                - string
+                - 'max:64'
+          -
+            handle: address
+            field:
+              type: textarea
+              display: Adres
+              validate:
+                - nullable
+                - string
+                - 'max:500'
+          -
+            handle: social_links
+            field:
+              type: grid
+              display: 'Linki społecznościowe'
+              max_rows: 8
+              add_row: 'Dodaj link'
+              fields:
+                -
+                  import: smk_link
+              validate:
+                - nullable
+                - array

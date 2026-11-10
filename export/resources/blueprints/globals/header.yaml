@@ -1,0 +1,28 @@
+title: Nagłówek
+tabs:
+  main:
+    display: Ustawienia
+    sections:
+      -
+        fields:
+          -
+            handle: sticky
+            field:
+              type: toggle
+              display: 'Przyklejony nagłówek'
+              default: false
+              validate:
+                - boolean
+          -
+            handle: cta
+            field:
+              type: grid
+              display: 'Link CTA'
+              max_rows: 1
+              add_row: 'Dodaj CTA'
+              fields:
+                -
+                  import: smk_link
+              validate:
+                - nullable
+                - array

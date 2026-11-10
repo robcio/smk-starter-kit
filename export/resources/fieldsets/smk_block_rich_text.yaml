@@ -1,0 +1,65 @@
+title: 'SMK — Tekst sformatowany'
+fields:
+  -
+    handle: heading
+    field:
+      type: text
+      display: Nagłówek
+      validate:
+        - nullable
+        - string
+        - 'max:3000'
+  -
+    handle: body
+    field:
+      type: bard
+      display: Treść
+      instructions: 'Używaj akapitów, nagłówków H2 i H3, list oraz bezpiecznych odnośników. Nie dodawaj tutaj nagłówka H1.'
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - anchor
+      sets: {}
+      antlers: false
+      save_html: false
+      remove_empty_nodes: true
+      validate:
+        - required
+  -
+    handle: appearance
+    field:
+      type: revealer
+      display: Wygląd
+      input_label: 'Ustawienia sekcji'
+      mode: button
+      instructions: 'Rozwiń opcjonalne ustawienia. Sekcja działa z wartościami domyślnymi.'
+  -
+    import: smk_section
+    config:
+      anchor:
+        always_save: true
+        if:
+          appearance: 'equals true'
+      theme:
+        type: hidden
+        validate:
+          - required
+          - 'in:surface'
+        always_save: true
+      width:
+        type: hidden
+        default: reading
+        validate:
+          - required
+          - 'in:reading'
+        always_save: true
+      spacing:
+        always_save: true
+        if:
+          appearance: 'equals true'
+      variant:
+        always_save: true

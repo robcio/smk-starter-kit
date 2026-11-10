@@ -1,0 +1,2 @@
+{{ unless page:has_hero }}<div class="smk-section" data-smk-spacing="normal"><div class="smk-container" data-smk-width="reading"><h1 class="smk-display">{{ page:title | sanitize }}</h1></div></div>{{ /unless }}
+{{ page:blocks }}{{ partial:dynamic :src="partial" :block="block" }}{{ /page:blocks }}

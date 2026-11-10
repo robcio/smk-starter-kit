@@ -1,0 +1,66 @@
+title: 'SMK — Ustawienia sekcji'
+fields:
+  -
+    handle: anchor
+    field:
+      type: text
+      display: Kotwica
+      instructions: 'Opcjonalny identyfikator odnośnika, np. oferta. Zacznij od małej litery; używaj liter bez polskich znaków, cyfr i myślników.'
+      validate:
+        - nullable
+        - string
+        - 'max:64'
+        - 'regex:/^[a-z][a-z0-9-]*$/'
+        - 'not_in:main-content'
+  -
+    handle: theme
+    field:
+      type: select
+      display: Motyw
+      options:
+        surface: Podstawowy
+        contrast: Kontrastowy
+        accent: Akcentowy
+      default: surface
+      clearable: false
+      validate:
+        - required
+        - 'in:surface,contrast,accent'
+  -
+    handle: width
+    field:
+      type: select
+      display: Szerokość
+      options:
+        reading: 'Do czytania'
+        content: Standardowa
+        wide: Szeroka
+        full: Pełna
+      default: content
+      clearable: false
+      validate:
+        - required
+        - 'in:reading,content,wide,full'
+  -
+    handle: spacing
+    field:
+      type: select
+      display: Odstępy
+      options:
+        compact: Małe
+        normal: Standardowe
+        spacious: Duże
+      default: normal
+      clearable: false
+      validate:
+        - required
+        - 'in:compact,normal,spacious'
+  -
+    handle: variant
+    field:
+      type: hidden
+      display: Wariant
+      default: standard
+      validate:
+        - required
+        - 'in:standard'

@@ -1,0 +1,46 @@
+title: Identyfikacja
+tabs:
+  main:
+    display: Ustawienia
+    sections:
+      -
+        fields:
+          -
+            handle: logo
+            field:
+              type: assets
+              display: Logo
+              container: assets
+              max_files: 1
+              mode: list
+              restrict: true
+              allow_uploads: true
+              validate:
+                - nullable
+                - 'mimes:jpg,jpeg,png,webp'
+              folder: ''
+              instructions: 'Opcjonalna bitmapa JPEG, PNG lub WebP. Bez SVG.'
+          -
+            handle: logo_alt
+            field:
+              type: text
+              display: 'Tekst alternatywny logo'
+              validate:
+                - nullable
+                - string
+                - 'max:200'
+          -
+            handle: favicon
+            field:
+              type: assets
+              display: Favicon
+              container: assets
+              max_files: 1
+              mode: list
+              restrict: true
+              allow_uploads: true
+              validate:
+                - nullable
+                - 'mimes:jpg,jpeg,png,webp'
+              folder: ''
+              instructions: 'Opcjonalna bitmapa JPEG, PNG lub WebP. Bez SVG.'

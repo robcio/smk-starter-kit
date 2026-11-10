@@ -1,0 +1,40 @@
+title: 'Domyślne SEO'
+tabs:
+  main:
+    display: Ustawienia
+    sections:
+      -
+        fields:
+          -
+            handle: title_suffix
+            field:
+              type: text
+              display: 'Sufiks tytułu'
+              validate:
+                - nullable
+                - string
+                - 'max:120'
+          -
+            handle: default_description
+            field:
+              type: textarea
+              display: 'Domyślny opis'
+              validate:
+                - nullable
+                - string
+                - 'max:320'
+          -
+            handle: default_og_image
+            field:
+              type: assets
+              display: 'Domyślny obraz społecznościowy'
+              container: assets
+              max_files: 1
+              mode: list
+              restrict: true
+              allow_uploads: true
+              validate:
+                - nullable
+                - 'mimes:jpg,jpeg,png,webp'
+              folder: ''
+              instructions: 'Opcjonalna bitmapa JPEG, PNG lub WebP. Bez SVG.'

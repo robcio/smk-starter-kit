@@ -1,0 +1,6 @@
+<section class="smk-section" data-smk-block="rich_text" data-smk-theme="{{ block:theme }}" data-smk-spacing="{{ block:spacing }}"{{ if block:anchor }} id="{{ block:anchor }}"{{ /if }}>
+    <div class="smk-container smk-stack" data-smk-width="reading">
+        {{ if block:heading }}<h2>{{ block:heading | sanitize }}</h2>{{ /if }}
+        <div class="smk-rich-text">{{ block:html }}</div>
+    </div>
+</section>

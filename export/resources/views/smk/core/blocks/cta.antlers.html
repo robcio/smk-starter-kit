@@ -1,0 +1,7 @@
+<section class="smk-section" data-smk-block="cta" data-smk-theme="{{ block:theme }}" data-smk-spacing="{{ block:spacing }}"{{ if block:anchor }} id="{{ block:anchor }}"{{ /if }}>
+    <div class="smk-container smk-stack smk-cta" data-smk-width="content">
+        <h2 class="smk-display">{{ block:heading | sanitize }}</h2>
+        {{ if block:text }}<p class="smk-lead">{{ block:text | sanitize }}</p>{{ /if }}
+        {{ partial:smk/core/partials/actions :links="block:links" }}
+    </div>
+</section>

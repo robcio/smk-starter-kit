@@ -1,0 +1,89 @@
+manifest_schema: 1
+core_contract_version: 1
+id: smk.core
+version: 0.1.0
+requires:
+  core: ^0.1.0
+  modules: {}
+  edition: core
+  platform:
+    php: ^8.3
+    statamic: ^6.0
+    laravel: ^13.17
+    node: '>=22.12.0 <27.0.0'
+  asset_containers:
+    - assets
+provides:
+  blocks:
+    hero:
+      fieldset: resources/fieldsets/smk_block_hero.yaml
+      partial: resources/views/smk/core/blocks/hero.antlers.html
+      variants:
+        - standard
+      default: standard
+    rich_text:
+      fieldset: resources/fieldsets/smk_block_rich_text.yaml
+      partial: resources/views/smk/core/blocks/rich_text.antlers.html
+      variants:
+        - standard
+      default: standard
+    cta:
+      fieldset: resources/fieldsets/smk_block_cta.yaml
+      partial: resources/views/smk/core/blocks/cta.antlers.html
+      variants:
+        - standard
+      default: standard
+  collections: {}
+  blueprints: {}
+  fieldsets:
+    -
+      handle: smk_block_hero
+      path: resources/fieldsets/smk_block_hero.yaml
+    -
+      handle: smk_block_rich_text
+      path: resources/fieldsets/smk_block_rich_text.yaml
+    -
+      handle: smk_block_cta
+      path: resources/fieldsets/smk_block_cta.yaml
+    -
+      handle: smk_link
+      path: resources/fieldsets/smk_link.yaml
+    -
+      handle: smk_section
+      path: resources/fieldsets/smk_section.yaml
+    -
+      handle: smk_seo
+      path: resources/fieldsets/smk_seo.yaml
+  asset_containers:
+    -
+      handle: assets
+      path: content/assets/assets.yaml
+views:
+  - resources/views/smk/core/blocks/hero.antlers.html
+  - resources/views/smk/core/blocks/rich_text.antlers.html
+  - resources/views/smk/core/blocks/cta.antlers.html
+frontend:
+  css: {}
+  js: {}
+contributions: {}
+conflicts: {}
+owned_paths:
+  - resources/fieldsets/smk_block_hero.yaml
+  - resources/views/smk/core/blocks/hero.antlers.html
+  - resources/fieldsets/smk_block_rich_text.yaml
+  - resources/views/smk/core/blocks/rich_text.antlers.html
+  - resources/fieldsets/smk_block_cta.yaml
+  - resources/views/smk/core/blocks/cta.antlers.html
+  - content/assets/assets.yaml
+  - resources/blueprints/assets/assets.yaml
+  - resources/fieldsets/smk_link.yaml
+  - resources/fieldsets/smk_section.yaml
+  - resources/fieldsets/smk_seo.yaml
+licenses:
+  - project-license-policy
+generated_outputs:
+  - resources/fieldsets/smk_page_builder.yaml
+  - resources/smk/generated/profile.json
+  - resources/smk/generated/render-map.json
+  - resources/css/generated/modules.css
+  - resources/js/generated/modules.js

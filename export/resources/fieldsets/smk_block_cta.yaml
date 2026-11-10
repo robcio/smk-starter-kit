@@ -1,0 +1,73 @@
+title: 'SMK — Wezwanie do działania'
+fields:
+  -
+    handle: heading
+    field:
+      type: text
+      display: Nagłówek
+      validate:
+        - required
+        - string
+        - 'max:3000'
+  -
+    handle: text
+    field:
+      type: text
+      display: Opis
+      validate:
+        - nullable
+        - string
+        - 'max:3000'
+  -
+    handle: links
+    field:
+      type: grid
+      display: Linki
+      instructions: 'Dodaj od jednego do dwóch odnośników z etykietą i celem.'
+      max_rows: 2
+      min_rows: 1
+      fields:
+        -
+          import: smk_link
+      validate:
+        - required
+        - array
+        - 'max:2'
+        - 'min:1'
+  -
+    handle: appearance
+    field:
+      type: revealer
+      display: Wygląd
+      input_label: 'Ustawienia sekcji'
+      mode: button
+      instructions: 'Rozwiń opcjonalne ustawienia. Sekcja działa z wartościami domyślnymi.'
+  -
+    import: smk_section
+    config:
+      anchor:
+        always_save: true
+        if:
+          appearance: 'equals true'
+      theme:
+        always_save: true
+        if:
+          appearance: 'equals true'
+      width:
+        type: hidden
+        validate:
+          - required
+          - 'in:content'
+        always_save: true
+      spacing:
+        options:
+          normal: Standardowe
+          spacious: Duże
+        validate:
+          - required
+          - 'in:normal,spacious'
+        always_save: true
+        if:
+          appearance: 'equals true'
+      variant:
+        always_save: true

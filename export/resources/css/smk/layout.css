@@ -1,0 +1,35 @@
+@layer components {
+    /* Width is the outer border-box limit, including gutters. Never nest containers. */
+    .smk-container {
+        box-sizing: border-box;
+        inline-size: 100%;
+        min-inline-size: 0;
+        max-inline-size: var(--smk-container-content);
+        margin-inline: auto;
+        padding-inline: var(--smk-space-gutter);
+    }
+    .smk-container:where([data-smk-width="reading"]) { max-inline-size: var(--smk-container-reading); }
+    .smk-container:where([data-smk-width="content"]) { max-inline-size: var(--smk-container-content); }
+    .smk-container:where([data-smk-width="wide"]) { max-inline-size: var(--smk-container-wide); }
+    .smk-container:where([data-smk-width="full"]) { max-inline-size: var(--smk-container-full); }
+
+    /* A section owns its two padding edges; adjacent edges add, margins do not collapse. */
+    .smk-section {
+        display: flow-root;
+        margin-block: 0;
+        padding-block: var(--smk-space-section-normal);
+        min-inline-size: 0;
+    }
+    .smk-section:where([data-smk-spacing="compact"]) { padding-block: var(--smk-space-section-compact); }
+    .smk-section:where([data-smk-spacing="normal"]) { padding-block: var(--smk-space-section-normal); }
+    .smk-section:where([data-smk-spacing="spacious"]) { padding-block: var(--smk-space-section-spacious); }
+    .smk-section > :where(:first-child) { margin-block-start: 0; }
+    .smk-section > :where(:last-child) { margin-block-end: 0; }
+
+    .smk-stack {
+        display: flex;
+        flex-direction: column;
+        gap: var(--smk-space-stack);
+    }
+    .smk-stack > * { margin-block: 0; min-inline-size: 0; }
+}

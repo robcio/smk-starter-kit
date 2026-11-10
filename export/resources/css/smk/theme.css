@@ -1,0 +1,53 @@
+/* Build-time breakpoints; runtime values are in the SMK semantic scope. */
+@theme {
+    --breakpoint-sm: 40rem;
+    --breakpoint-md: 48rem;
+    --breakpoint-lg: 64rem;
+    --breakpoint-xl: 80rem;
+    --breakpoint-2xl: 96rem;
+}
+@theme inline {
+    --color-smk-surface: var(--smk-color-surface);
+    --color-smk-text: var(--smk-color-text);
+    --color-smk-muted: var(--smk-color-muted);
+    --color-smk-border: var(--smk-color-border);
+    --color-smk-accent: var(--smk-color-accent);
+    --color-smk-on-accent: var(--smk-color-on-accent);
+    --color-smk-focus: var(--smk-color-focus);
+    --color-smk-link: var(--smk-color-link);
+    --color-smk-link-hover: var(--smk-color-link-hover);
+    --font-smk-body: var(--smk-font-body);
+    --font-smk-display: var(--smk-font-display);
+    --text-smk-small: var(--smk-text-small);
+    --text-smk-body: var(--smk-text-body);
+    --text-smk-lead: var(--smk-text-lead);
+    --text-smk-heading-sm: var(--smk-text-heading-sm);
+    --text-smk-heading-md: var(--smk-text-heading-md);
+    --text-smk-heading-lg: var(--smk-text-heading-lg);
+    --text-smk-display: var(--smk-text-display);
+    --leading-smk-body: var(--smk-leading-body);
+    --leading-smk-heading: var(--smk-leading-heading);
+    --spacing-smk-stack: var(--smk-space-stack);
+    --spacing-smk-gutter: var(--smk-space-gutter);
+    --spacing-smk-section-compact: var(--smk-space-section-compact);
+    --spacing-smk-section-normal: var(--smk-space-section-normal);
+    --spacing-smk-section-spacious: var(--smk-space-section-spacious);
+    --container-smk-reading: var(--smk-container-reading);
+    --container-smk-content: var(--smk-container-content);
+    --container-smk-wide: var(--smk-container-wide);
+    --container-smk-full: var(--smk-container-full);
+    --radius-smk-none: var(--smk-radius-none);
+    --radius-smk-small: var(--smk-radius-small);
+    --radius-smk-medium: var(--smk-radius-medium);
+    --radius-smk-large: var(--smk-radius-large);
+    --radius-smk-pill: var(--smk-radius-pill);
+    --radius-smk-button: var(--smk-radius-button);
+    --shadow-smk-none: var(--smk-shadow-none);
+    --shadow-smk-subtle: var(--smk-shadow-subtle);
+    --shadow-smk-elevated: var(--smk-shadow-elevated);
+    --ease-smk: var(--smk-motion-ease);
+}
+
+@utility duration-smk-fast { transition-duration: var(--smk-motion-fast); }
+@utility duration-smk-normal { transition-duration: var(--smk-motion-normal); }
+@utility duration-smk-slow { transition-duration: var(--smk-motion-slow); }

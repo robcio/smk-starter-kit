@@ -1,0 +1,54 @@
+title: 'SMK — SEO'
+fields:
+  -
+    handle: seo_title
+    field:
+      type: text
+      display: 'Tytuł SEO'
+      validate:
+        - nullable
+        - string
+        - 'max:160'
+  -
+    handle: seo_description
+    field:
+      type: textarea
+      display: 'Opis SEO'
+      validate:
+        - nullable
+        - string
+        - 'max:320'
+  -
+    handle: seo_noindex
+    field:
+      type: toggle
+      display: 'Wyklucz z indeksowania'
+      default: false
+      instructions: 'Nie ogranicza dostępu do strony.'
+      validate:
+        - boolean
+  -
+    handle: seo_canonical
+    field:
+      type: text
+      display: Canonical
+      validate:
+        - nullable
+        - string
+        - 'max:2048'
+        - 'new App\Rules\Smk\CanonicalUrl'
+  -
+    handle: seo_image
+    field:
+      type: assets
+      display: 'Obraz społecznościowy'
+      container: assets
+      max_files: 1
+      mode: list
+      restrict: true
+      allow_uploads: true
+      validate:
+        - nullable
+        - 'mimes:jpg,jpeg,png,webp'
+      folder: ''
+      instructions: 'Opcjonalna bitmapa JPEG, PNG lub WebP. Bez SVG.'

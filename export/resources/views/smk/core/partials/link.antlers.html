@@ -1,0 +1,1 @@
+<a href="{{ item:url | sanitize }}"{{ if item:current }} aria-current="page"{{ /if }}{{ if item:new_window }} target="_blank" rel="noopener noreferrer"{{ /if }}>{{ item:label | sanitize }}{{ if item:new_window }}<span class="smk-sr-only"> (otwiera się w nowej karcie)</span>{{ /if }}</a>

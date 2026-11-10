@@ -1,0 +1,31 @@
+title: 'Nawigacja w stopce'
+tabs:
+  main:
+    display: Ustawienia
+    sections:
+      - fields:
+          - handle: title
+            field:
+              type: text
+              display: Etykieta
+              validate:
+                - required
+                - string
+                - 'max:120'
+          - handle: url
+            field:
+              type: text
+              display: 'Adres URL'
+              instructions: 'Bezpieczna ścieżka, kotwica, HTTP(S), mailto lub tel. Pusta wartość tylko dla grupy z dziećmi.'
+              validate:
+                - nullable
+                - string
+                - 'max:2048'
+                - 'new App\Rules\Smk\LinkUrl'
+          - handle: new_window
+            field:
+              type: toggle
+              display: 'Otwórz w nowej karcie'
+              default: false
+              validate:
+                - boolean

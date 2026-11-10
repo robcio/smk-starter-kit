@@ -1,0 +1,60 @@
+title: Strona
+tabs:
+  main:
+    display: Treść
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Tytuł
+              validate:
+                - required
+                - string
+                - 'max:200'
+          -
+            handle: document_language
+            field:
+              type: select
+              display: Język dokumentu
+              instructions: 'Puste pole korzysta z języka witryny.'
+              clearable: true
+              options:
+                pl: Polski
+                en: English
+              validate:
+                - nullable
+                - 'in:pl,en'
+          -
+            handle: content
+            field:
+              type: markdown
+              display: 'Treść demonstracyjna'
+              escape_markup: true
+              validate:
+                - nullable
+                - string
+          -
+            import: smk_page_builder
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            import: smk_seo
+  sidebar:
+    display: Adres
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              display: Slug
+              validate:
+                - required
+                - alpha_dash

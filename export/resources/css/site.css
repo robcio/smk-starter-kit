@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import "./smk/primitives.css";
+@import "./smk/semantic.css";
+@import "./smk/theme.css";
+@import "./smk/base.css";
+@import "./smk/typography.css";
+@import "./smk/layout.css";
+@import "./smk/components.css";
+@import "./smk/builder.css";
+@import "./brand/theme.css";
+@import "./smk/accessibility.css";
+
+@source "../views";
+@source "../../content";
+@source "../../tests/Fixtures/Smk/design-system.html";
+@source "../../tests/Fixtures/Smk/layout.html";

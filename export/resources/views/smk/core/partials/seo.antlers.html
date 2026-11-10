@@ -1,0 +1,20 @@
+<title>{{ seo:title | sanitize }}</title>
+<meta name="robots" content="{{ seo:robots | sanitize }}">
+{{ if seo:description }}<meta name="description" content="{{ seo:description | sanitize }}">{{ /if }}
+{{ if seo:canonical }}<link rel="canonical" href="{{ seo:canonical | sanitize }}">{{ /if }}
+{{ if seo:social }}
+<meta property="og:title" content="{{ seo:title | sanitize }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ seo:site_name | sanitize }}">
+{{ if seo:description }}<meta property="og:description" content="{{ seo:description | sanitize }}">{{ /if }}
+{{ if seo:canonical }}<meta property="og:url" content="{{ seo:canonical | sanitize }}">{{ /if }}
+<meta name="twitter:card" content="{{ if seo:image }}summary_large_image{{ else }}summary{{ /if }}">
+<meta name="twitter:title" content="{{ seo:title | sanitize }}">
+{{ if seo:description }}<meta name="twitter:description" content="{{ seo:description | sanitize }}">{{ /if }}
+{{ if seo:image }}
+<meta property="og:image" content="{{ seo:image:url | sanitize }}">
+<meta property="og:image:alt" content="{{ seo:image:alt | sanitize }}">
+<meta name="twitter:image" content="{{ seo:image:url | sanitize }}">
+<meta name="twitter:image:alt" content="{{ seo:image:alt | sanitize }}">
+{{ /if }}
+{{ /if }}

@@ -1,0 +1,20 @@
+{{ if shell }}
+<header class="smk-header" data-smk-header{{ if shell:settings:header:sticky }} data-smk-sticky{{ /if }} data-smk-theme="surface">
+    <div class="smk-container smk-header-inner" data-smk-width="content">
+        <a class="smk-brand" href="{{ shell:home_url | sanitize }}">
+            {{ if shell:logo }}
+            <img src="{{ shell:logo:url | sanitize }}" width="{{ shell:logo:width }}" height="{{ shell:logo:height }}" alt="{{ shell:logo:alt | sanitize }}">
+            {{ else }}{{ shell:settings:site:site_name | sanitize }}{{ /if }}
+        </a>
+        {{ if shell:navigation:main }}
+        <div class="smk-header-menu" data-smk-disclosure="mobile">
+            <button type="button" data-smk-toggle aria-controls="smk-main-navigation" aria-expanded="true" hidden>Menu główne</button>
+            <div id="smk-main-navigation" class="smk-header-panel" data-smk-panel>
+                {{ partial:smk/core/partials/navigation :items="shell:navigation:main" label="Nawigacja główna" }}
+            </div>
+        </div>
+        {{ /if }}
+        {{ if shell:cta }}<div class="smk-header-cta">{{ partial:smk/core/partials/link :item="shell:cta" }}</div>{{ /if }}
+    </div>
+</header>
+{{ /if }}

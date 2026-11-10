@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ smk_document:lang | sanitize }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- smk:seo -->
+        {{ vite src="resources/js/site.js|resources/css/site.css" }}
+    </head>
+    <body class="antialiased">
+        <a class="smk-skip-link" href="#main-content">Przejdź do treści</a>
+        {{ yield:smk_header }}
+            {{ partial:smk/core/partials/header :shell="smk_shell" }}
+        {{ /yield:smk_header }}
+        <main id="main-content" tabindex="-1">
+            {{ template_content }}
+        </main>
+        {{ yield:smk_footer }}
+            {{ partial:smk/core/partials/footer :shell="smk_shell" }}
+        {{ /yield:smk_footer }}
+    </body>
+</html>

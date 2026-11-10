@@ -1,0 +1,11 @@
+<section class="smk-section" data-smk-block="hero" data-smk-theme="{{ block:theme }}" data-smk-spacing="{{ block:spacing }}"{{ if block:anchor }} id="{{ block:anchor }}"{{ /if }}>
+    <div class="smk-container smk-hero" data-smk-width="{{ block:width }}">
+        <div class="smk-stack smk-hero-copy">
+            {{ if block:eyebrow }}<p class="smk-eyebrow">{{ block:eyebrow | sanitize }}</p>{{ /if }}
+            <h1 class="smk-display">{{ block:heading | sanitize }}</h1>
+            {{ if block:lead }}<p class="smk-lead">{{ block:lead | sanitize }}</p>{{ /if }}
+            {{ partial:smk/core/partials/actions :links="block:links" }}
+        </div>
+        {{ if block:image }}{{ partial:smk/core/partials/media :image="block:image" }}{{ /if }}
+    </div>
+</section>

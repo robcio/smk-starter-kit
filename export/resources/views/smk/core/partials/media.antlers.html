@@ -1,0 +1,4 @@
+<figure class="smk-media">
+    <img src="{{ image:src | sanitize }}" srcset="{{ image:srcset | sanitize }}" sizes="(min-width: 64rem) 45vw, 100vw" width="{{ image:width }}" height="{{ image:height }}" alt="{{ image:alt | sanitize }}" loading="{{ image:loading }}" fetchpriority="{{ image:priority }}" decoding="async">
+    {{ if image:caption || image:credit }}<figcaption>{{ image:caption | sanitize }}{{ if image:credit }} <span>{{ image:credit | sanitize }}</span>{{ /if }}</figcaption>{{ /if }}
+</figure>

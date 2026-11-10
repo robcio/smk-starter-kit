@@ -1,0 +1,10 @@
+/* Neutral reference Brand. Override public roles in this base layer, not Core files.
+   Theme color overrides must supply all nine roles for every used data-smk-theme.
+   Keep selectors at :where(...) specificity so explicit utilities retain priority. */
+@layer base {
+    :root {
+        --smk-font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --smk-font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --smk-radius-button: var(--smk-radius-small);
+    }
+}

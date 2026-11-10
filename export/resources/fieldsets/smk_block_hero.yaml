@@ -1,0 +1,141 @@
+title: 'SMK — Sekcja otwierająca'
+fields:
+  -
+    handle: heading
+    field:
+      type: text
+      display: Nagłówek
+      instructions: 'Główny nagłówek H1 strony. Puste pole korzysta z tytułu strony.'
+      validate:
+        - nullable
+        - string
+        - 'max:3000'
+  -
+    handle: eyebrow
+    field:
+      type: text
+      display: Nadtytuł
+      validate:
+        - nullable
+        - string
+        - 'max:3000'
+  -
+    handle: lead
+    field:
+      type: text
+      display: Wprowadzenie
+      validate:
+        - nullable
+        - string
+        - 'max:3000'
+  -
+    handle: image
+    field:
+      type: assets
+      container: assets
+      max_files: 1
+      mode: grid
+      display: 'Obraz (JPEG/PNG/WebP)'
+      validate:
+        - nullable
+        - 'max:1'
+        - 'mimes:jpg,jpeg,png,webp'
+  -
+    handle: alt_override
+    field:
+      type: text
+      display: 'Tekst alternatywny w tej sekcji'
+      instructions: 'Opcjonalny opis obrazu dla tej sekcji. Puste pole korzysta z opisu zapisanego w zasobie.'
+      validate:
+        - nullable
+        - string
+        - 'max:3000'
+  -
+    handle: decorative
+    field:
+      type: toggle
+      display: 'Dekoracyjny (pusty alt)'
+      default: false
+      validate:
+        - boolean
+  -
+    handle: caption
+    field:
+      type: text
+      display: 'Podpis pod obrazem'
+      validate:
+        - nullable
+        - string
+        - 'max:3000'
+  -
+    handle: credit
+    field:
+      type: text
+      display: 'Autor lub źródło obrazu'
+      validate:
+        - nullable
+        - string
+        - 'max:3000'
+  -
+    handle: links
+    field:
+      type: grid
+      display: Linki
+      instructions: 'Opcjonalnie dodaj najwyżej dwa odnośniki.'
+      max_rows: 2
+      min_rows: 0
+      fields:
+        -
+          import: smk_link
+      validate:
+        - nullable
+        - array
+        - 'max:2'
+  -
+    handle: appearance
+    field:
+      type: revealer
+      display: Wygląd
+      input_label: 'Ustawienia sekcji'
+      mode: button
+      instructions: 'Rozwiń opcjonalne ustawienia. Sekcja działa z wartościami domyślnymi.'
+  -
+    import: smk_section
+    config:
+      anchor:
+        always_save: true
+        if:
+          appearance: 'equals true'
+      theme:
+        options:
+          surface: Podstawowy
+          contrast: Kontrastowy
+        validate:
+          - required
+          - 'in:surface,contrast'
+        always_save: true
+        if:
+          appearance: 'equals true'
+      width:
+        options:
+          content: Standardowa
+          wide: Szeroka
+        default: wide
+        validate:
+          - required
+          - 'in:content,wide'
+        always_save: true
+        if:
+          appearance: 'equals true'
+      spacing:
+        options:
+          normal: Standardowe
+          spacious: Duże
+        validate:
+          - required
+          - 'in:normal,spacious'
+        always_save: true
+        if:
+          appearance: 'equals true'
+      variant:
+        always_save: true
