@@ -4,7 +4,7 @@ Neutral Core for new Statamic applications. **Repository: robcio/smk-starter-kit
 
 ## Installation from GitHub
 
-These commands become usable after the repository and tag are published. GitHub installation has not been verified remotely while this repository is only prepared locally.
+Public repository and tag v1.0.0 are available. On 2026-11-10, the native Statamic installer successfully installed robcio/smk-starter-kit:1.0.0 directly from GitHub in an isolated application, without --local or a Composer path repository. Consumer checks passed: 105 PHP tests / 1036 assertions, 4 JavaScript tests, npm ci/build on Node24, Pint and 68 tokens. The consumer test harness uses the documented stable Home ID adaptation in two tests. The all-in-one statamic new command below is the documented CLI form; that separate global CLI path was not executed in this verification.
 
 For a new project, the documented Statamic CLI form is:
 
@@ -42,7 +42,7 @@ composer validate
 
 The verifier checks the declared exported payload and package identity. It is not an exhaustive secret scanner or a replacement for consumer tests. Full consumer verification is performed outside this exported repository; the release handoff records the runs and their limits.
 
-Versions are derived from Git tags (initial proposed tag v1.0.0). Do not edit an existing release tag. Do not reinstall the starter kit to update a customized website. Review and test changes separately; composer update alone does not update copied templates/blueprints.
+Versions are derived from Git tags (released tag v1.0.0). Do not edit an existing release tag. Do not reinstall the starter kit to update a customized website. Review and test changes separately; composer update alone does not update copied templates/blueprints.
 
 ## License and access
 
